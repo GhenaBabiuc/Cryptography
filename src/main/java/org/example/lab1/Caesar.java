@@ -81,4 +81,20 @@ public class Caesar {
 
         return decryptedMessage.toString();
     }
+
+    public String[] bruteForceSingle(String cipher) {
+        String[] results = new String[26];
+        for (int k = 1; k <= 25; k++) {
+            results[k] = decrypt(cipher, k);
+        }
+        return results;
+    }
+
+    public String[] bruteForceTwoWhenKeywordKnown(String cipher, String key2) {
+        String[] results = new String[26];
+        for (int k = 1; k <= 25; k++) {
+            results[k] = decryptTwoKeys(cipher, k, key2);
+        }
+        return results;
+    }
 }
